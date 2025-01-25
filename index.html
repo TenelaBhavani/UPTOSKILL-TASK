@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UptoSkills Clone</title>
+  <style>
+    /* Basic Reset */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e90ff, #00bcd4);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('back ground image.jpg') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    footer {
+      background: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Trainings Section */
+    .trainings {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      background: url('image 1.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+    }
+
+    .trainings-content {
+      flex: 1;
+      max-width: 50%;
+      padding: 20px;
+    }
+
+    .trainings-content h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .video-container .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 20px; 
+            transform: translateY(-50%);
+            color: white;
+            text-align: left;
+        }
+        .overlay-text h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .overlay-text h3 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: normal;
+        }
+        .overlay-text p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+    .trainings-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #fff;
+    }
+
+    .form-section {
+      flex: 1;
+      max-width: 50%;
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .services, .mode {
+      margin-bottom: 15px;
+    }
+
+    .services label,
+    .mode label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    button {
+      background: #1e90ff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons {
+      margin-top: 15px;
+    }
+
+    .footer .social-icons a {
+      color: white;
+      margin-right: 10px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .footer .social-icons a:hover {
+      color: #00bcd4;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UPTOSKILLS</h1>
+    <nav>
+      <ul>
+        <li><a href="#"><button type="Employer Login">Employer Login</button></a></li>
+        <li><a href="#"><button type="Candidate Login">Candidate Login</button></a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Internships</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Competitions</a></li>
+        <li><a href="#">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Trainings / Internships / Placements</h2>
+  </section>
+
+  <section class="content">
+    <h3>We offer incredible Tech & Non-Tech Skill Development Trainings through collaborations with colleges.</h3>
+    <p>Through collaborations with leading organizations, we provide opportunities to help you grow and succeed in your career.</p>
+  </section>
+  <br>
+  <div class="video-container">
+    <video autoplay muted loop style="width: 100%; height: 300px; object-fit: cover;">
+        <source src="./back ground video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-text">
+        <h3>UptoSkills Training Program</h3>
+        <h1>Accelerate your career with Uptoskills Trainings</h1>
+        <p>Trainings | Internships | Placements</p>
+    </div>
+    </div>
+  
+  
+
+  <section class="trainings">
+    <div class="trainings-content">
+      <h2>Trainings with UptoSkills!</h2>
+      <p>
+        UptoSkills makes it possible for you to achieve your fullest potential. 
+        We nurture your talent and equip you to contribute to the creation of a better future. 
+        With exciting opportunities across a breadth of domains and industries, 
+        we encourage you to take the initial steps toward a fulfilling career with us.
+      </p>
+    </div>
+    <div class="form-section">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <input type="text" name="college_name" placeholder="College Name *" required>
+          <select name="role" required>
+            <option value="">Who you are *</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="contact_person" placeholder="College Contact Person Name *" required>
+          <input type="email" name="contact_email" placeholder="College Contact Person Email *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="contact_phone" placeholder="College Contact Person Phone *" required>
+          <input type="text" name="designation" placeholder="College Contact Person Designation *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="location" placeholder="College Location *" required>
+        </div>
+        <div class="services">
+          <label><input type="checkbox" name="services" value="trainings"> Trainings</label>
+          <label><input type="checkbox" name="services" value="internships"> Internships</label>
+          <label><input type="checkbox" name="services" value="placements"> Placements</label>
+          <label><input type="checkbox" name="services" value="competitions"> Learn & Earn (Hackathons & Competitions)</label>
+        </div>
+        <div class="mode">
+          <label><input type="radio" name="mode" value="online" required> Online</label>
+          <label><input type="radio" name="mode" value="offline" required> Offline</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-section">
+        <h3>UPTOSKILLS</h3>
+        <p><strong>Address:</strong> Palam, New Delhi, Delhi 110077</p>
+        <p><strong>Email:</strong> info@uptoskills.com</p>
+        <p><strong>Phone:</strong> +91-9319772294</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Jobs & Internships</a></li>
+          <li><a href="#">Become a Trainer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Short Links</h3>
+        <ul>
+          <li><a href="#">Terms & Condition</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund & Cancellation Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Login to Download Certificate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025 UptoSkills. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>
