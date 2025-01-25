@@ -1,390 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UptoSkills Clone</title>
-  <style>
-    /* Basic Reset */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(to right, #1e90ff, #00bcd4);
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: url('back ground image.jpg') no-repeat center center/cover;
-      height: 400px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 36px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-      font-size: 16px;
-      color: #555;
-    }
-
-    footer {
-      background: #1e90ff;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    /* Trainings Section */
-    .trainings {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      background: url('image 1.jpg') no-repeat center center;
-      background-size: cover;
-      color: white;
-    }
-
-    .trainings-content {
-      flex: 1;
-      max-width: 50%;
-      padding: 20px;
-    }
-
-    .trainings-content h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .video-container {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Development Programs</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .video-container video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+
+        body {
+            font-family: Arial, sans-serif;
         }
-        .video-container .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 20px; 
-            transform: translateY(-50%);
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #333;
             color: white;
-            text-align: left;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .overlay-text h1 {
-            font-size: 32px;
+
+        .top-bar .container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .login-btn {
+            background-color: orange;
+            border: none;
+            padding: 5px 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Hero Section with Background Image */
+        .hero-section {
+            background: url('https://internship.aicte-india.org/uploads/logo/CORPORATE617d15563f6c41635587414.jpg') no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        .hero-section .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
             font-weight: bold;
-            margin: 0;
-        }
-        .overlay-text h3 {
-            font-size: 18px;
-            margin: 0;
-            font-weight: normal;
-        }
-        .overlay-text p {
-            font-size: 14px;
-            margin-top: 10px;
+            color: orange;
         }
 
-    .trainings-content p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #fff;
-    }
+        .navbar {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
 
-    .form-section {
-      flex: 1;
-      max-width: 50%;
-      padding: 20px;
-    }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
 
-    .form-group {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
+        /* Social Media Icons */
+        .social-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    .form-group input,
-    .form-group select {
-      flex: 1;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
 
-    .services, .mode {
-      margin-bottom: 15px;
-    }
+        .social-icons a:hover {
+            background-color: orange;
+        }
 
-    .services label,
-    .mode label {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-      color: #fff;
-    }
+        /* Buttons Section */
+        .buttons {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
 
-    button {
-      background: #1e90ff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        .faculty-btn, .speaker-btn {
+            background-color: orange;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        /* Volunteer Section */
+.volunteer-section {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
 
-    button:hover {
-      background: #0056b3;
-    }
+.volunteer-section .volunteer-header {
+    margin-bottom: 30px;
+}
 
-    .footer {
-      background-color: #1f2937;
-      color: white;
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
-    }
+.volunteer-section .volunteer-btn {
+    background-color: orange;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
-    .footer .container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.volunteer-section h1 {
+    font-size: 36px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #333;
+}
 
-    .footer-section {
-      flex: 1;
-      min-width: 250px;
-      margin: 10px;
-    }
+.volunteer-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
 
-    .footer-section h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
+.volunteer-section p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
 
-    .footer-section p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
+/* Why Volunteer Section */
+.why-volunteer {
+    margin-top: 40px;
+}
 
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
+.why-volunteer h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
+.volunteer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
 
-    .footer-section ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .footer-section ul li a:hover {
-      text-decoration: underline;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
 
-    .footer .social-icons {
-      margin-top: 15px;
-    }
+.card i {
+    font-size: 40px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
 
-    .footer .social-icons a {
-      color: white;
-      margin-right: 10px;
-      font-size: 16px;
-      text-decoration: none;
-    }
+.card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-    .footer .social-icons a:hover {
-      color: #00bcd4;
-    }
+.card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-      border-top: 1px solid #333;
-      padding-top: 10px;
-    }
-  </style>
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>UPTOSKILLS</h1>
-    <nav>
-      <ul>
-        <li><a href="#"><button type="Employer Login">Employer Login</button></a></li>
-        <li><a href="#"><button type="Candidate Login">Candidate Login</button></a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Internships</a></li>
-        <li><a href="#">Jobs</a></li>
-        <li><a href="#">Competitions</a></li>
-        <li><a href="#">Discover</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section class="hero">
-    <h2>Trainings / Internships / Placements</h2>
-  </section>
+    <header class="top-bar">
+        <div class="container">
+            <span>Palam, New Delhi, Delhi 110077</span>
+            <span>|</span>
+            <span>info@uptoskills.com</span>
+            <span>|</span>
+            <span>+91-9319772294</span>
+            <button class="login-btn">Employer Login</button>
+            <button class="login-btn">Candidate Login</button>
+        </div>
+    </header>
 
-  <section class="content">
-    <h3>We offer incredible Tech & Non-Tech Skill Development Trainings through collaborations with colleges.</h3>
-    <p>Through collaborations with leading organizations, we provide opportunities to help you grow and succeed in your career.</p>
-  </section>
-  <br>
-  <div class="video-container">
-    <video autoplay muted loop style="width: 100%; height: 300px; object-fit: cover;">
-        <source src="./back ground video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay-text">
-        <h3>UptoSkills Training Program</h3>
-        <h1>Accelerate your career with Uptoskills Trainings</h1>
-        <p>Trainings | Internships | Placements</p>
-    </div>
-    </div>
+    <main class="hero-section">
+        <div class="logo">UptoSkills</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Internship</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Competitions</a></li>
+                <li><a href="#">Discover +</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="#" title="Facebook">F</a>
+            <a href="#" title="Twitter">T</a>
+            <a href="#" title="LinkedIn">L</a>
+            <a href="#" title="Instagram">I</a>
+        </div>
+
+        <div class="buttons">
+            <button class="faculty-btn">Faculty Login</button>
+            <button class="speaker-btn">Registration as a Speaker</button>
+        </div>
+    </main>
+    <main class="hero-section">
+      <!-- Existing Hero Section -->
   
+      <section class="volunteer-section">
+          <div class="volunteer-header">
+              <button class="volunteer-btn">Registration as a Participant</button>
+              <h2>At UptoSkills, we are calling for</h2>
+              <h1>Volunteer Guest Speakers</h1>
+              <p>We are dedicated to fostering excellence in education & skill development through our Faculty Development Program. We invite passionate educators and experts to join us as volunteer speakers to inspire and empower our faculty community.</p>
+          </div>
+  
+          <div class="why-volunteer">
+              <h2>Why Volunteer?</h2>
+              <div class="volunteer-cards">
+                  <div class="card">
+                      <i class="fas fa-user-graduate"></i>
+                      <h3>Professional Growth</h3>
+                      <p>Expand your professional network and enhance your skills through sharing your expertise with fellow educators.</p>
+                  </div>
+                  <div class="card">
+                      <i class="fas fa-landmark"></i>
+                      <h3>Contribute to Education</h3>
+                      <p>Make a meaningful impact by guiding and supporting the professional development of faculty members.</p>
+                  </div>
+                  <div class="card">
+                      <i class="fas fa-chart-line"></i>
+                      <h3>Gain Recognition</h3>
+                      <p>Gain recognition within the educational community for your contributions to improving teaching and learning practices.</p>
+                  </div>
+                  <div class="card">
+                      <i class="fas fa-award"></i>
+                      <h3>Certificate of Appreciation</h3>
+                      <p>To honor your valuable contribution as a volunteer speaker in our Faculty Development Program, we are pleased to offer a Certificate of Appreciation.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
   
 
-  <section class="trainings">
-    <div class="trainings-content">
-      <h2>Trainings with UptoSkills!</h2>
-      <p>
-        UptoSkills makes it possible for you to achieve your fullest potential. 
-        We nurture your talent and equip you to contribute to the creation of a better future. 
-        With exciting opportunities across a breadth of domains and industries, 
-        we encourage you to take the initial steps toward a fulfilling career with us.
-      </p>
-    </div>
-    <div class="form-section">
-      <form action="#" method="POST">
-        <div class="form-group">
-          <input type="text" name="college_name" placeholder="College Name *" required>
-          <select name="role" required>
-            <option value="">Who you are *</option>
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-          </select>
+    <footer>
+        <div class="footer-content">
+            <span>© 2025 UptoSkills. All rights reserved.</span>
         </div>
-        <div class="form-group">
-          <input type="text" name="contact_person" placeholder="College Contact Person Name *" required>
-          <input type="email" name="contact_email" placeholder="College Contact Person Email *" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="contact_phone" placeholder="College Contact Person Phone *" required>
-          <input type="text" name="designation" placeholder="College Contact Person Designation *" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="location" placeholder="College Location *" required>
-        </div>
-        <div class="services">
-          <label><input type="checkbox" name="services" value="trainings"> Trainings</label>
-          <label><input type="checkbox" name="services" value="internships"> Internships</label>
-          <label><input type="checkbox" name="services" value="placements"> Placements</label>
-          <label><input type="checkbox" name="services" value="competitions"> Learn & Earn (Hackathons & Competitions)</label>
-        </div>
-        <div class="mode">
-          <label><input type="radio" name="mode" value="online" required> Online</label>
-          <label><input type="radio" name="mode" value="offline" required> Offline</label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-section">
-        <h3>UPTOSKILLS</h3>
-        <p><strong>Address:</strong> Palam, New Delhi, Delhi 110077</p>
-        <p><strong>Email:</strong> info@uptoskills.com</p>
-        <p><strong>Phone:</strong> +91-9319772294</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Jobs & Internships</a></li>
-          <li><a href="#">Become a Trainer</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Short Links</h3>
-        <ul>
-          <li><a href="#">Terms & Condition</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Refund & Cancellation Policy</a></li>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Login to Download Certificate</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright © 2025 UptoSkills. All Rights Reserved</p>
-    </div>
-  </footer>
+    </footer>
 </body>
 </html>
+
+
+
