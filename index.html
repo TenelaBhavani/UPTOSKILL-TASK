@@ -53,7 +53,7 @@
         </div>
 
         <div class="buttons">
-            <button class="faculty-btn">Faculty Login</button>
+            <button onclick="func()" class="faculty-btn">Faculty Login</button>
             <button class="speaker-btn">Registration as a Speaker</button>
         </div>
     </main>
@@ -242,6 +242,12 @@
   </footer>
 
   </main>
+  <script>
+    const faclog=document.querySelector(".faculty-btn");
+    function func(){
+      window.location.assign("facultylogin.html");
+    }
+  </script>
    
 </body>
 </html>
