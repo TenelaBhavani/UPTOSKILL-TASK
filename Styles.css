@@ -10,49 +10,6 @@ body {
   overflow: hidden;
   animation: scrollText 10s linear infinite;
 }
-
-/* Container for content */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Responsive Grid Layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.grid-item {
-  background: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-/* Make grid responsive */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
       /* General Reset */
       * {
           margin: 0;
