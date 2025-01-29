@@ -147,6 +147,17 @@ body {
           text-align: center;
       }
 
+      .employer-login-btn {
+    background-color:orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
       .faculty-btn, .speaker-btn {
           background-color: orange;
           border: none;
@@ -634,8 +645,8 @@ top: 0;
             <span>info@uptoskills.com</span>
             <span>|</span>
             <span>+91-9319772294</span>
-            <button class="login-btn">Employer Login</button>
-            <button class="login-btn">Candidate Login</button>
+            <button class="employer-login-btn" onclick="location.href='employerlogin.html'">Employer Login</button>
+            <button class="login-btn">My account</button>
             <input type="text" class="search-input-rounded" placeholder="Search..." />
             <button class="search-btn-rounded">Go</button>
         </div>
@@ -666,15 +677,11 @@ top: 0;
                     <i class="fab fa-instagram"></i>
          
         </div>
-
         <div class="buttons">
-<<<<<<< HEAD
           <button class="faculty-btn" onclick="location.href='facultylogin.html'">Faculty Login</button>
-       <button class="speaker-btn">Registration as a Speaker</button>
-=======
-            <button onclick="func()" class="faculty-btn">Faculty Login</button>
-            <button class="speaker-btn">Registration as a Speaker</button>
->>>>>>> 0867703022dc4f384311a454297afa6031f16771
+          <a href="#why-volunteer">
+            <button class="speaker-btn">Registration as a speaker</button>
+        </a>
         </div>
     </main>
     <main class="hero-section">
@@ -682,13 +689,16 @@ top: 0;
   
       <section class="volunteer-section">
           <div class="volunteer-header">
+            <a href="#certificate">
               <button class="volunteer-btn">Registration as a Participant</button>
+          </a>
               <h2>At UptoSkills, we are calling for</h2>
               <h1>Volunteer Guest Speakers</h1>
               <p>We are dedicated to fostering excellence in education & skill development through our Faculty Development Program. We invite passionate educators and experts to join us as volunteer speakers to inspire and empower our faculty community.</p>
           </div>
   
           <div class="why-volunteer">
+            <div class="why-volunteer" id="why-volunteer">
               <h2>Why Volunteer?</h2>
               <div class="volunteer-cards">
                   <div class="card">
@@ -735,7 +745,8 @@ top: 0;
           <p>
             Are you ready to inspire and empower educators through our Faculty Development Programs? Apply now and be a part of our mission to advance excellence in skill development.
           </p>
-          <button class="register-btn">Register Now</button>
+          <button class="register-btn" onclick="location.href='register.html'">Register Now</button>
+
         </div>
       </section>
 
@@ -785,7 +796,7 @@ top: 0;
           </div>
         </div>
       </section>
-
+      <div class="certificate-section" id="certificate">
       <section class="certificate-section">
         <h2>Certificate of Completion</h2>
         <p>
