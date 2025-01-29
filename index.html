@@ -762,8 +762,13 @@ top: 0;
         </div>
 
         <div class="buttons">
+<<<<<<< HEAD
           <button class="faculty-btn" onclick="location.href='facultylogin.html'">Faculty Login</button>
        <button class="speaker-btn">Registration as a Speaker</button>
+=======
+            <button onclick="func()" class="faculty-btn">Faculty Login</button>
+            <button class="speaker-btn">Registration as a Speaker</button>
+>>>>>>> 0867703022dc4f384311a454297afa6031f16771
         </div>
     </main>
     <main class="hero-section">
@@ -951,6 +956,12 @@ top: 0;
   </footer>
 
   </main>
+  <script>
+    const faclog=document.querySelector(".faculty-btn");
+    function func(){
+      window.location.assign("facultylogin.html");
+    }
+  </script>
    
 </body>
 </html>
