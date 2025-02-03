@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Ensures proper scaling on mobile devices -->
+  <!-- Ensure proper scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Faculty Development Programs</title>
   <!-- FontAwesome CSS -->
@@ -55,6 +55,13 @@
       height: 100vh;
       position: relative;
       color: white;
+    }
+    /* On mobile, let the hero section adjust its height */
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        min-height: 60vh;
+      }
     }
     .hero-section .logo {
       position: absolute;
@@ -374,7 +381,6 @@
       color: #666;
       line-height: 1.5;
     }
-    /* Responsive grid for participant benefits */
     @media (max-width: 1024px) {
       .participant-benefits {
         grid-template-columns: repeat(2, 1fr);
@@ -575,11 +581,11 @@
         flex-direction: column;
         gap: 10px;
       }
-      /* Social Icons */
+      /* Social Icons remain vertical */
       .social-icons {
         position: static;
-        flex-direction: row;
-        justify-content: center;
+        /* Remove change to row so they stay vertical */
+        flex-direction: column;
         margin: 10px 0;
       }
       /* Hero Section Logo & Buttons */
