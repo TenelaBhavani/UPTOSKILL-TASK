@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,7 @@
       position: relative;
       color: white;
     }
-    /* On mobile, let the hero section adjust its height */
+    /* On mobile, adjust the height so the image scales better */
     @media (max-width: 768px) {
       .hero-section {
         height: auto;
@@ -94,35 +95,37 @@
       color: white;
       font-weight: bold;
     }
+    .header .search-icon:hover {
+      color: orange;
+    position: relative;
+  }
     
-    /* ======================================
-       Social Media Icons
-    ====================================== */
-    .social-icons {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .social-icons a {
-      text-decoration: none;
-      color: white;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
-    .social-icons a:hover {
-      background-color: orange;
-    }
-    
+   /* Social Media Icons (in Header, Right Side) */
+.social-icons {
+  position: absolute;
+  top: 80px;
+  right: 20px; /* Changed from left: 20px to right: 20px */
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.social-icons a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.social-icons a:hover {
+  background-color: orange;
+}
+
     /* ======================================
        Buttons Section (in Hero)
     ====================================== */
@@ -564,13 +567,11 @@
        MOBILE RESPONSIVE STYLES
     ====================================== */
     @media (max-width: 768px) {
-      /* Top Bar */
       .top-bar {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
-      /* Navbar */
       .navbar {
         position: static;
         transform: none;
@@ -581,14 +582,12 @@
         flex-direction: column;
         gap: 10px;
       }
-      /* Social Icons remain vertical */
-      .social-icons {
-        position: static;
-        /* Remove change to row so they stay vertical */
-        flex-direction: column;
-        margin: 10px 0;
+      /* Adjust social icons size if needed on mobile */
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
       }
-      /* Hero Section Logo & Buttons */
       .hero-section .logo {
         font-size: 22px;
       }
@@ -597,7 +596,6 @@
         transform: none;
         margin-top: 20px;
       }
-      /* Volunteer Section */
       .volunteer-section h1 {
         font-size: 28px;
       }
@@ -607,7 +605,6 @@
       .volunteer-section p {
         font-size: 14px;
       }
-      /* Faculty Development */
       .faculty-development {
         flex-direction: column;
         align-items: center;
@@ -626,11 +623,9 @@
       .fdp-register p {
         font-size: 0.9rem;
       }
-      /* FDP Participant */
       .participant-benefits {
         grid-template-columns: 1fr;
       }
-      /* Register Section */
       .register-section {
         flex-direction: column;
         height: auto;
@@ -651,7 +646,6 @@
       .purpose-content h3 {
         font-size: 20px;
       }
-      /* Footer */
       .footer-container {
         flex-direction: column;
         align-items: center;
@@ -716,8 +710,9 @@
             <span>+91-9319772294</span>
             <button class="employer-login-btn" onclick="location.href='employerlogin.html'">Employer Login</button>
             <button class="login-btn">My account</button>
-            <input type="text" class="search-input-rounded" placeholder="Search..." />
-            <button class="search-btn-rounded">Go</button>
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+          </div>
         </div>
     </header>
 
@@ -732,19 +727,18 @@
                 <li><a href="#">Discover +</a></li>
             </ul>
         </nav>
-
-        <div class="social-icons">
-          <a href="https://www.youtube.com/@uptoskills9101" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-            <a href="https://www.facebook.com/uptoskills.learnings/" target="_blank" aria-label="YouTube">
-              <i class="fab fa-facebook"></i>
-              <a href="https://x.com/SkillsUpto" target="_blank" aria-label="YouTube">
-                <i class="fab fa-twitter"></i>
-                <a href="https://www.linkedin.com/company/uptoskills/?originalSubdomain=in" target="_blank" aria-label="YouTube">
-                  <i class="fab fa-linkedin"></i>
-                  <a href="https://www.instagram.com/uptoskills/" target="_blank" aria-label="YouTube">
-                    <i class="fab fa-instagram"></i>
-         
+        <main class="hero-section">
+          <div class="social-icons">
+            <a href="https://www.youtube.com/@uptoskills9101" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+              <a href="https://www.facebook.com/uptoskills.learnings/" target="_blank" aria-label="YouTube">
+                <i class="fab fa-facebook"></i>
+                <a href="https://x.com/SkillsUpto" target="_blank" aria-label="YouTube">
+                  <i class="fab fa-twitter"></i>
+                  <a href="https://www.linkedin.com/company/uptoskills/?originalSubdomain=in" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.instagram.com/uptoskills/" target="_blank" aria-label="YouTube">
+                      <i class="fab fa-instagram"></i>
         </div>
         <div class="buttons">
           <button class="faculty-btn" onclick="location.href='facultylogin.html'">Faculty Login</button>
@@ -753,7 +747,6 @@
         </a>
         </div>
     </main>
-    <main class="hero-section">
       <!-- Existing Hero Section -->
   
       <section class="volunteer-section">
