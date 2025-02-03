@@ -10,7 +10,9 @@
 </head>
 <body>
   <style>
-    /* Base Styles & Resets */
+   /* ============================================
+   Base Reset & Global Styles
+============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -19,27 +21,19 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
-/* Scrolling Text */
-.scrolling-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: scrollText 10s linear infinite;
-}
-
-/* Top Bar */
+/* ============================================
+   Top Bar
+============================================ */
 .top-bar {
   background-color: #333;
   color: white;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .top-bar .container {
@@ -57,7 +51,9 @@ body {
   border-radius: 5px;
 }
 
-/* Hero Section with Background Image */
+/* ============================================
+   Hero Section & Navbar
+============================================ */
 .hero-section {
   background: url('https://internship.aicte-india.org/uploads/logo/CORPORATE617d15563f6c41635587414.jpg')
     no-repeat center center/cover;
@@ -86,8 +82,8 @@ body {
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 20px;
 }
 
@@ -97,35 +93,39 @@ body {
   font-weight: bold;
 }
 
-/* Social Media Icons */
+/* ============================================
+   Social Media Icons
+============================================ */
 .social-icons {
   position: absolute;
   top: 20px;
   right: 20px;
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  flex-direction: column;
 }
 
 .social-icons a {
-  text-decoration: none;
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .social-icons a:hover {
   background-color: orange;
 }
 
-/* Buttons Section */
+/* ============================================
+   Buttons Section (at Bottom of Hero)
+============================================ */
 .buttons {
   position: absolute;
   bottom: 50px;
@@ -134,16 +134,7 @@ body {
   text-align: center;
 }
 
-.employer-login-btn {
-  background-color: orange;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
+.employer-login-btn,
 .faculty-btn,
 .speaker-btn {
   background-color: orange;
@@ -156,7 +147,9 @@ body {
   margin: 10px;
 }
 
-/* Volunteer Section */
+/* ============================================
+   Volunteer Section
+============================================ */
 .volunteer-section {
   padding: 50px 20px;
   background-color: #f8f9fa;
@@ -198,7 +191,9 @@ body {
   line-height: 1.6;
 }
 
-/* Why Volunteer Section */
+/* ============================================
+   Why Volunteer Section & Cards
+============================================ */
 .why-volunteer {
   background: url('http://cdn.wallpapersafari.com/52/65/u9gjz1.jpg')
     no-repeat center center/cover;
@@ -254,7 +249,9 @@ body {
   line-height: 1.5;
 }
 
-/* Faculty Development Section */
+/* ============================================
+   Faculty Development Section
+============================================ */
 .faculty-development {
   background: url('https://slidechef.net/wp-content/uploads/2022/09/PPT-of-Physics-1024x576.jpg')
     no-repeat center center/cover;
@@ -337,7 +334,9 @@ body {
   background-color: #d35400;
 }
 
-/* FDP Participant Section */
+/* ============================================
+   FDP Participant Section
+============================================ */
 .fdp-participant {
   background: url('https://tse3.mm.bing.net/th?id=OIP.Umj3Z3MFIOCH_WnTB0hPxwHaCe&pid=Api&P=0&h=180')
     no-repeat center center/cover;
@@ -407,7 +406,9 @@ body {
   line-height: 1.5;
 }
 
-/* Certificate Section */
+/* ============================================
+   Certificate Section
+============================================ */
 .certificate-section {
   text-align: center;
   margin: 50px auto;
@@ -442,7 +443,9 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Register Section */
+/* ============================================
+   Register Section
+============================================ */
 .register-section {
   background: url('https://tse2.mm.bing.net/th?id=OIP._0Aoa2bXgUiG1CWj2UpIKAHaFS&pid=Api&P=0&h=180')
     no-repeat center center/cover;
@@ -526,7 +529,9 @@ body {
   top: 0;
 }
 
-/* Footer Styles */
+/* ============================================
+   Footer Section
+============================================ */
 .footer {
   background-color: #1a1a2e;
   color: white;
@@ -593,13 +598,11 @@ body {
   font-size: 14px;
 }
 
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  /* Top Bar & Navbar */
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+============================================ */
+@media only screen and (max-width: 768px) {
+  /* Navbar becomes static and stacks its items */
   .navbar {
     position: static;
     transform: none;
@@ -607,21 +610,31 @@ body {
   }
   .navbar ul {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
-  /* Social Icons */
+  
+  /* Social Icons switch to a row */
   .social-icons {
+    position: static;
     flex-direction: row;
-    top: 10px;
-    right: 10px;
+    justify-content: center;
+    margin-top: 10px;
   }
-  /* Buttons Section */
+  
+  /* Adjust Hero Logo size */
+  .hero-section .logo {
+    font-size: 22px;
+  }
+  
+  /* Buttons Section becomes static */
   .buttons {
     position: static;
     transform: none;
     margin-top: 20px;
   }
-  /* Volunteer Section */
+  
+  /* Volunteer Section text adjustments */
   .volunteer-section h1 {
     font-size: 28px;
   }
@@ -631,12 +644,8 @@ body {
   .volunteer-section p {
     font-size: 14px;
   }
-  /* Why Volunteer */
-  .why-volunteer {
-    height: auto;
-    padding: 40px 20px;
-  }
-  /* Faculty Development */
+  
+  /* Faculty Development stacks columns */
   .faculty-development {
     flex-direction: column;
     align-items: center;
@@ -645,6 +654,7 @@ body {
   .fdp-purpose,
   .fdp-register {
     width: 100%;
+    margin-bottom: 20px;
   }
   .fdp-purpose h2,
   .fdp-register h2 {
@@ -654,23 +664,86 @@ body {
   .fdp-register p {
     font-size: 0.9rem;
   }
-  /* FDP Participant */
+  
+  /* FDP Participant: single-column benefits */
   .participant-benefits {
     grid-template-columns: 1fr;
   }
-  /* Register Section */
+  
+  /* Register Section becomes column layout */
   .register-section {
+    flex-direction: column;
     height: auto;
     padding: 20px;
-    flex-direction: column;
   }
-  /* Footer */
+  .register-content,
+  .purpose-content {
+    width: 100%;
+  }
+  .register-content h2 {
+    font-size: 24px;
+  }
+  .register-content p,
+  .purpose-content p,
+  .purpose-content li {
+    font-size: 14px;
+  }
+  .purpose-content h3 {
+    font-size: 20px;
+  }
+  
+  /* Footer stacks its sections */
   .footer-container {
     flex-direction: column;
     align-items: center;
   }
 }
 
+@media only screen and (max-width: 480px) {
+  /* Further reduce text sizes for very small devices */
+  .hero-section .logo {
+    font-size: 18px;
+  }
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar ul {
+    gap: 5px;
+  }
+  .volunteer-section h1 {
+    font-size: 24px;
+  }
+  .volunteer-section h2 {
+    font-size: 20px;
+  }
+  .volunteer-section p {
+    font-size: 12px;
+  }
+  .fdp-purpose h2,
+  .fdp-register h2 {
+    font-size: 1.2rem;
+  }
+  .fdp-purpose p,
+  .fdp-register p {
+    font-size: 0.8rem;
+  }
+  .certificate-section h2 {
+    font-size: 24px;
+  }
+  .certificate-section p {
+    font-size: 14px;
+  }
+  .register-content h2,
+  .purpose-content h3 {
+    font-size: 20px;
+  }
+  .register-content p,
+  .purpose-content p,
+  .purpose-content li {
+    font-size: 12px;
+  }
+}
 
   </style>
     <header class="top-bar">
