@@ -325,107 +325,201 @@
        FDP Participant Section
     ====================================== */
     .fdp-participant {
-      background: url('https://tse3.mm.bing.net/th?id=OIP.Umj3Z3MFIOCH_WnTB0hPxwHaCe&pid=Api&P=0&h=180')
-        no-repeat center center/cover;
-      height: 100vh;
-      position: relative;
-      color: white;
-      text-align: center;
-      padding: 40px;
-      background-color: #fff;
-    }
-    .fdp-participant h2 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .fdp-participant p {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-    .fdp-participant h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .participant-benefits {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .benefit-card {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .benefit-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .benefit-card .icon img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 15px;
-    }
-    .benefit-card h4 {
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .benefit-card p {
-      font-size: 1rem;
-      color: #666;
-      line-height: 1.5;
-    }
-    @media (max-width: 1024px) {
-      .participant-benefits {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 768px) {
-      .participant-benefits {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* ======================================
-       Certificate Section
-    ====================================== */
-    .certificate-section {
-      text-align: center;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-    }
-    .certificate-section h2 {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-    .certificate-section p {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    .certificate-container {
-      text-align: center;
-    }
-    .certificate-image {
-      max-width: 100%;
-      height: auto;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+  background: url('https://tse3.mm.bing.net/th?id=OIP.Umj3Z3MFIOCH_WnTB0hPxwHaCe&pid=Api&P=0&h=180')
+    no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.fdp-participant h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.fdp-participant p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.fdp-participant h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Participant Benefits */
+.participant-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.benefit-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card .icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.benefit-card h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .participant-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .participant-benefits {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fdp-participant {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .fdp-participant h2 {
+    font-size: 1.8rem;
+  }
+
+  .fdp-participant p {
+    font-size: 0.95rem;
+  }
+
+  .benefit-card {
+    padding: 15px;
+  }
+
+  .benefit-card h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fdp-participant {
+    padding: 50px 15px;
+  }
+
+  .fdp-participant h2 {
+    font-size: 1.6rem;
+  }
+
+  .fdp-participant p {
+    font-size: 0.9rem;
+  }
+
+  .participant-benefits {
+    gap: 10px;
+  }
+
+  .benefit-card {
+    padding: 10px;
+  }
+
+  .benefit-card h4 {
+    font-size: 1rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   Certificate Section
+====================================== */
+.certificate-section {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.certificate-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.certificate-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.certificate-container {
+  text-align: center;
+}
+
+.certificate-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile-friendly Certificate */
+@media (max-width: 768px) {
+  .certificate-section {
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .certificate-section h2 {
+    font-size: 24px;
+  }
+
+  .certificate-section p {
+    font-size: 14px;
+  }
+
+  .certificate-image {
+    border-radius: 5px;
+  }
+}
+
     
     /* ======================================
        Register Section
